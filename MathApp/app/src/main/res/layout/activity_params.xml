@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context="com.nvlad.mathapp.ParamsActivity">
+    <ScrollView
+        android:id="@+id/scroll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+        <TextView
+            android:text="@string/a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText android:id="@+id/params_a"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+        <TextView
+            android:text="@string/b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText android:id="@+id/params_b"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+        <TextView
+            android:text="@string/c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText android:id="@+id/params_c"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+        <TextView
+            android:text="@string/d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText android:id="@+id/params_d"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>
+    <android.inputmethodservice.KeyboardView
+        android:id="@+id/keyboardview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:visibility="gone"
+        />
+</RelativeLayout>

@@ -1,0 +1,99 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context="com.nvlad.mathapp.HelpActivity">
+<ScrollView
+        android:id="@+id/scroll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+<LinearLayout
+    android:id="@+id/texts"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:text="@string/help1"
+        android:id="@+id/help1"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="match_parent"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:text="@string/help2"
+        android:id="@+id/help2"
+        android:maxLines="100"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:text="@string/help3"
+        android:id="@+id/help3"
+        android:maxLines="100"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:text="@string/help4"
+        android:id="@+id/help4"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="match_parent"
+
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:text="@string/help5"
+        android:id="@+id/help5"
+        android:maxLines="100"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:text="@string/help6"
+        android:id="@+id/help6"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:text="@string/help7"
+        android:id="@+id/help7"
+        android:maxLines="100"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:text="@string/help8"
+        android:id="@+id/help8"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+    </LinearLayout>
+</ScrollView>
+</RelativeLayout>

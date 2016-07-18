@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+          android:keyWidth="12.50%p"
+          android:keyHeight="10%p" >
+
+    <Row>
+        <Key android:codes="56001"    android:keyLabel="sin" android:keyEdgeFlags="left" android:keyWidth="20%p"/>
+        <Key android:codes="56002"    android:keyLabel="cos" android:keyWidth="20%p"/>
+        <Key android:codes="56003"    android:keyLabel="tg" android:keyWidth="20%p"/>
+        <Key android:codes="56004"    android:keyLabel="ctg" android:keyWidth="20%p"/>
+        <Key android:codes="56005"    android:keyLabel="exp" android:keyWidth="20%p"/>
+        <Key android:codes="56006"    android:keyLabel="sqrt" android:keyWidth="20%p" />
+        <Key android:codes="40"    android:keyLabel="(" />
+        <Key android:codes="41"    android:keyLabel=")" android:keyEdgeFlags="right"/>
+    </Row>
+    <Row>
+        <Key android:codes="56007"    android:keyLabel="abs" android:keyEdgeFlags="left" android:keyWidth="20%p"/>
+        <Key android:codes="56008"    android:keyLabel="log" android:keyWidth="20%p"/>
+        <Key android:codes="56009"    android:keyLabel="ln" android:keyWidth="20%p"/>
+        <Key android:codes="56010"    android:keyLabel="asin" android:keyWidth="20%p"/>
+        <Key android:codes="56011"    android:keyLabel="acos" android:keyWidth="20%p"/>
+        <Key android:codes="56012"    android:keyLabel="atg" android:keyWidth="20%p" />
+        <Key android:codes="56013"    android:keyLabel="sh" android:keyWidth="20%p"/>
+        <Key android:codes="56014"    android:keyLabel="ch" android:keyEdgeFlags="right" android:keyWidth="20%p" />
+    </Row>
+    <Row>
+        <Key android:codes="55007" android:keyLabel="back" android:keyWidth="15%p" android:horizontalGap="20%p" android:keyEdgeFlags="left"/>
+        <Key android:codes="-3"    android:keyIcon="@drawable/sym_keyboard_done" android:keyWidth="15%p"/>
+        <Key android:codes="-5"    android:keyIcon= "@drawable/sym_keyboard_delete" android:isRepeatable="true" android:keyWidth="15%p"/>
+        <Key android:codes="55006" android:keyLabel="CLR" android:keyWidth="15%p" android:keyEdgeFlags="right"/>
+    </Row>
+</Keyboard>

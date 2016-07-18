@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GraphPlotter</string>
+    <string name="fx">f(x)=</string>
+    <string name="draw">Redraw chart</string>
+    <string name="func">Add function</string>
+    <string name="help">Help</string>
+    <string name="options">Options</string>
+    <string name="PointNum">Number of points on screen</string>
+    <string name="extrema">add/remove extrema</string>
+    <string name="roots">add/remove roots</string>
+    <string name="intersect">add/remove intersections</string>
+    <string name="params">Edit parameters</string>
+    <string name="AddRemFunction">Add/Remove Function</string>
+    <string name="title_activity_help">Help</string>
+    <string name="help1">Usage</string>
+    <string name="help2">The application plots any function or multiple functions on the same graph.
+                        Zooming/panning is supported. Also, minimum and maximum values of X or Y can
+                        be explicitly typed in options.</string>
+    <string name="help3">Supported operators</string>
+    <string name="help4">\n Add +\n Subtract -\n Multiply *\n Divide /\n Power ^\n
+                    Modulus %\n Factorial !\n</string>
+    <string name="help5">Available functions</string>
+    <string name="help6">Functions can be typed by pressing the \'func\' button on the custom keyboard.\n \n
+                    sqrt(): square root\n exp(): exponent\n sin(): sinus\n
+                    cos(): cosinus\n tg(): tangent\n ctg(): cotangent\n abs(): absolute value\n
+                    log(): logarithm decimal\n ln(): logarithm natural\n asin(): arcsinus\n
+                    acos(): arccosinus\n atan(): arctangent\n sh(): hyperbolic sinus\n
+                    ch(): hyperbolic cosinus\n \n </string>
+    <string name="help7">Analysis features</string>
+    <string name="help8">\n Find Extrema: calculates extrema of all drawn functions and shows them
+            as dots on the graph.\n \n
+            Find Roots: calculates roots of all drawn functions and shows them
+            as dots on the graph.\n \n
+            Find intersections: calculates all intersections of each pair of drawn functions and
+            shows them as dots on the graph.\n</string>
+    <string name="title_activity_options">Options</string>
+    <string name="space"> </string>
+    <string name="title_activity_params">Parameters</string>
+    <string name="xmin">xmin</string>
+    <string name="xmax">xmax</string>
+    <string name="ymin">ymin</string>
+    <string name="ymax">ymax</string>
+    <string name="title_activity_multigraph">Multigraph</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mult_add">Add Function</string>
+    <string name="mult_rem">Remove Function</string>
+    <string name="a">a=</string>
+    <string name="b">b=</string>
+    <string name="c">c=</string>
+    <string name="d">d=</string>
+    <string name="simple_ime">Simple IME</string>
+    <string name="subtype_en_US">English (US)</string>
+
+    <color name="black">#000000</color>
+
+
+</resources>
