@@ -1,27 +1,8 @@
 <resources>
 
+    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-<!--        <item name="android:actionBarStyle">@style/MyActionBar</item>
-        <item name="actionBarStyle">@style/MyActionBar</item>-->
-    </style>
-    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@color/accent_material_light</item>
-        <item name="background">@color/accent_material_light</item>
-        <item name="android:textColor">@color/accent_material_dark</item>
-
+        <!-- Customize your theme here. -->
     </style>
 
 </resources>
-
-<!--<resources>
-<style name="AppTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
-    <item name="android:actionBarStyle">@style/MyActionBar</item>
-    <item name="actionBarStyle">@style/MyActionBar</item>
-</style>
-
-<style name="MyActionBar"
-       parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
-    <item name="android:background">@color/accent_material_light</item>
-    <item name="background">@color/accent_material_light</item>
-</style>
-</resources>-->

@@ -11,16 +11,6 @@
     <string name="extrema">add/remove extrema</string>
     <string name="roots">add/remove roots</string>
     <string name="intersect">add/remove intersections</string>
-
-    <string name="add_extrema">add extrema</string>
-    <string name="add_roots">add roots</string>
-    <string name="add_intersect">add intersections</string>
-
-    <string name="remove_extrema">remove extrema</string>
-    <string name="remove_roots">remove roots</string>
-    <string name="remove_intersect">remove intersections</string>
-
-
     <string name="params">Edit parameters</string>
     <string name="AddRemFunction">Add/Remove Function</string>
     <string name="title_activity_help">Help</string>
@@ -43,7 +33,7 @@
             as dots on the graph.\n \n
             Find Roots: calculates roots of all drawn functions and shows them
             as dots on the graph.\n \n
-            Find Intersections: calculates all intersections of each pair of drawn functions and
+            Find intersections: calculates all intersections of each pair of drawn functions and
             shows them as dots on the graph.\n</string>
     <string name="title_activity_options">Options</string>
     <string name="space"> </string>
