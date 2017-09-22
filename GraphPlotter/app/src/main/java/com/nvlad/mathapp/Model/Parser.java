@@ -37,7 +37,7 @@ class Parser{
 
     Parser (Expression expr, int mode){
         this.mode = mode;
-        this.expr=expr;
+        this.expr = expr;
     }
 
     private boolean isDigit(String s, int pos){
@@ -199,6 +199,7 @@ class Parser{
                 OperatorType op = getOperator(s,pos);
                 expr.getSymbol(j).setOperatorType(op);
                 expr.getSymbol(j).setOperatorRank(mOperatorRank[op.ordinal()]);
+                if ((j>0)&&(expr.getSymbol(j-1).isOperator())) throw new ParseException(-1);
                 len = 1;
             }
             if (isLetter(s,pos)) {

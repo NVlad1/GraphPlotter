@@ -20,6 +20,7 @@
         android:layout_gravity="center_horizontal"
         android:paddingBottom="16dp">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:id="@+id/layout_params_a"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:orientation="horizontal">
@@ -32,6 +33,7 @@
                   android:layout_height="wrap_content"/>
     </LinearLayout>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:id="@+id/layout_params_b"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:orientation="horizontal">
@@ -44,6 +46,7 @@
                   android:layout_height="wrap_content"/>
     </LinearLayout>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:id="@+id/layout_params_c"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:orientation="horizontal">
@@ -56,6 +59,7 @@
                   android:layout_height="wrap_content"/>
     </LinearLayout>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:id="@+id/layout_params_d"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:orientation="horizontal">

@@ -18,6 +18,7 @@ class Analysis {
     private boolean isExtremaMaximum[]; // true for maximum, false for minimum;
     private int MaxIter=5000;
 
+
     Analysis(){
         ExtrX = new double[MaxNumberOfExtrema];
         ExtrY = new double[MaxNumberOfExtrema];

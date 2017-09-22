@@ -12,6 +12,7 @@ import com.nvlad.mathapp.Exception.UnknownException;
  * Created by Vlad on 15.02.2016.
  */
 public class FunctionLab implements Parcelable {
+    private static FunctionLab sFunctionLab;
     private int NFunctions;
     private int NIntersect;
     private static int NFunctionsMax = 10;
@@ -29,7 +30,7 @@ public class FunctionLab implements Parcelable {
     private double IntersectY[];
     private int mode[];
 
-    public FunctionLab () {
+    private FunctionLab () {
         NFunctions = 0;
         x = new double[NMax];
         y = new double[NFunctionsMax][NMax];
@@ -40,7 +41,7 @@ public class FunctionLab implements Parcelable {
         An = new Analysis[NFunctionsMax];
         mode = new int[NFunctionsMax];
         for (int i=0;i<NFunctionsMax;i++){
-            Eval[i] = new Evaluate();
+            //Eval[i] = new Evaluate();
             An[i] = new Analysis();
             mode[i]=0;
         }
@@ -49,6 +50,13 @@ public class FunctionLab implements Parcelable {
         xmax = +20.0;
         ymin = -20.0;
         ymax = +20.0;
+    }
+
+    public static FunctionLab get() {
+        if (sFunctionLab == null) {
+            sFunctionLab = new FunctionLab();
+        }
+        return sFunctionLab;
     }
 
     public static final Parcelable.Creator<FunctionLab> CREATOR = new Parcelable.Creator<FunctionLab>() {
@@ -71,7 +79,9 @@ public class FunctionLab implements Parcelable {
         return NFunctions;
     }
 
-
+    public void clear (){
+        while(NFunctions>0) DeleteFunction(0);
+    }
 
     public void AddFunction(String s) throws ParseException {
         NFunctions++;
@@ -103,10 +113,9 @@ public class FunctionLab implements Parcelable {
         if (!isFunctionParsed) {
             for (int i = 0; i < NFunctions; i++) {
                 try {
-                    Eval[i]=null;
-                    Eval[i]=new Evaluate();
-                    Eval[i].setString(expr_str[i]);
-                    Eval[i].setExpressionEval(mode[i]);
+                    //Eval[i]=null;
+                    Eval[i]=new Evaluate(expr_str[i],mode[i]);
+                    //Eval[i].setExpressionEval(mode[i]);
                 }
                 catch (ParseException e){
                     throw new ParseException(i);
@@ -208,9 +217,8 @@ public class FunctionLab implements Parcelable {
             for (int j = 0; j < NFunctions - 1; j++)
                 for (int k = j + 1; k < NFunctions; k++) {
                     if ((mode[j] == 0) & (mode[k] == 0)) {
-                        Evaluate Eval_inter = new Evaluate();
-                        Eval_inter.setString(expr_str[j] + "-(" + expr_str[k] + ")");
-                        Eval_inter.setExpressionEval(0);
+                        Evaluate Eval_inter = new Evaluate(expr_str[j] + "-(" + expr_str[k] + ")",0);
+                        //Eval_inter.setExpressionEval(0);
                         Analysis An_inter = new Analysis();
                         for (int i = 0; i < numberOfDots; i++) {
                             x[i] = xmin + (xmax - xmin) * i / numberOfDots;
@@ -239,25 +247,25 @@ public class FunctionLab implements Parcelable {
         }
     }
 
-    public int getExtrNum(int j){return An[j].getExtrNum();}
-    public double getExtrX(int j, int i){return An[j].getExtrX(i);}
-    public double getExtrY(int j, int i){return An[j].getExtrY(i);}
-    public int getRootNum(int j){return An[j].getRootNum();}
-    public double getRoot(int j, int i){return An[j].getRoot(i);}
+    public int getExtrNum(int functionNumber){return An[functionNumber].getExtrNum();}
+    public double getExtrX(int functionNumber, int extremaNumber){return An[functionNumber].getExtrX(extremaNumber);}
+    public double getExtrY(int functionNumber, int extremaNumber){return An[functionNumber].getExtrY(extremaNumber);}
+    public int getRootNum(int functionNumber){return An[functionNumber].getRootNum();}
+    public double getRoot(int functionNumber, int rootNumber){return An[functionNumber].getRoot(rootNumber);}
     public int getIntersectionsNum(){return NIntersect;}
-    public double getIntersectX(int i){return IntersectX[i];}
-    public double getIntersectY(int i){return IntersectY[i];}
+    public double getIntersectX(int intersectionNumber){return IntersectX[intersectionNumber];}
+    public double getIntersectY(int intersectionNumber){return IntersectY[intersectionNumber];}
     public double getX(int i){return x[i];}
-    public double getY(int j, int i){return y[j][i];}
+    public double getY(int functionNumber, int i){return y[functionNumber][i];}
     public double getXmin(){return xmin;}
     public double getXmax(){return xmax;}
     public double getYmin(){return ymin;}
     public double getYmax(){return ymax;}
     public int getnumberofdots(){return numberOfDots;}
-    public void setXmin(double x){xmin=x;}
-    public void setXmax(double x){xmax=x;}
-    public void setYmin(double x){ymin=x;}
-    public void setYmax(double x){ymax=x;}
+    public void setXmin(double x){xmin=x; setAllFalse();}
+    public void setXmax(double x){xmax=x; setAllFalse();}
+    public void setYmin(double x){ymin=x; setAllFalse();}
+    public void setYmax(double x){ymax=x; setAllFalse();}
     public void setMode(int i, int j){mode[i]=j;}
     public int getMode(int i) {return mode[i];}
     public int getNFunctions(){

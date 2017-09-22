@@ -77,7 +77,7 @@ public class MultigraphActivity extends AppCompatActivity implements OnKeyboardS
         mCustomKeyboard = new CustomKeyboard(this, R.id.keyboardview, R.id.keyboardview2, R.xml.keyboard, R.xml.keyboard2, 1, this);
         // Install the key handler
         err2 = new ErrorAlert();
-        FLab = MainActivity.getFLab();
+        FLab = FunctionLab.get();
         N = FLab.getNFunctions();
         if (N==0){
             N++;

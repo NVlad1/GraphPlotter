@@ -19,6 +19,7 @@ import com.nvlad.mathapp.R;
 
 
 public class ParamsActivity extends AppCompatActivity implements OnKeyboardStateChangedListener {
+    private FunctionLab FLab;
     EditText par_a,par_b,par_c,par_d;
     Double _a,_b,_c,_d;
     boolean isChanged;
@@ -49,6 +50,7 @@ public class ParamsActivity extends AppCompatActivity implements OnKeyboardState
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_params);
+        FLab = FunctionLab.get();
         mCustomKeyboard = new CustomKeyboard(this, R.id.keyboardview, R.id.keyboardview, R.xml.keyboard3, R.xml.keyboard3, 1, this);
         isChanged=false;
         par_a = (EditText) findViewById(R.id.params_a);
@@ -128,7 +130,6 @@ public class ParamsActivity extends AppCompatActivity implements OnKeyboardState
         SaveData(par_c,2);
         SaveData(par_d,3);
         if (isChanged) {
-            FunctionLab FLab = MainActivity.getFLab();
             FLab.setAllFalse();
         }
         if( mCustomKeyboard.isCustomKeyboardVisible() ) mCustomKeyboard.hideCustomKeyboard(); else

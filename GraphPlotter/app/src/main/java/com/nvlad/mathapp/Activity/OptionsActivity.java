@@ -13,13 +13,16 @@ import android.widget.ScrollView;
 import com.nvlad.mathapp.Exception.ErrorAlert;
 import com.nvlad.mathapp.Keyboard.CustomKeyboard;
 import com.nvlad.mathapp.Keyboard.OnKeyboardStateChangedListener;
+import com.nvlad.mathapp.Model.FunctionLab;
 import com.nvlad.mathapp.R;
 
 
 public class OptionsActivity extends AppCompatActivity implements OnKeyboardStateChangedListener {
+    private FunctionLab FLab;
     Double xmin,xmax,ymin,ymax;
     EditText mXminField, mXmaxField, mYminField, mYmaxField;
     CustomKeyboard mCustomKeyboard;
+
     final ErrorAlert err1 = new ErrorAlert();
 
     private void SaveData(EditText edit, int ID){
@@ -33,21 +36,22 @@ public class OptionsActivity extends AppCompatActivity implements OnKeyboardStat
             edit.setText("0.0");
             x=0.0;
         }
-        if (ID==0) MainActivity.setXmin(4.0/3.0*x-1.0/3.0*MainActivity.getXmax()) ;
-        if (ID==1) MainActivity.setXmax(4.0/3.0*x-1.0/3.0*MainActivity.getXmin());
-        if (ID==2) MainActivity.setYmin(4.0/3.0*x-1.0/3.0*MainActivity.getYmax());
-        if (ID==3) MainActivity.setYmax(4.0/3.0*x-1.0/3.0*MainActivity.getYmin());
+        if (ID==0) FLab.setXmin(4.0/3.0*x-1.0/3.0*FLab.getXmax()) ;
+        if (ID==1) FLab.setXmax(4.0/3.0*x-1.0/3.0*FLab.getXmin());
+        if (ID==2) FLab.setYmin(4.0/3.0*x-1.0/3.0*FLab.getYmax());
+        if (ID==3) FLab.setYmax(4.0/3.0*x-1.0/3.0*FLab.getYmin());
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        FLab = FunctionLab.get();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
         mCustomKeyboard = new CustomKeyboard(this, R.id.keyboardview, R.id.keyboardview, R.xml.keyboard3, R.xml.keyboard3, 1, this);
-        xmin = 0.75*MainActivity.getXmin()+0.25*MainActivity.getXmax();
-        xmax = 0.25*MainActivity.getXmin()+0.75*MainActivity.getXmax();
-        ymin = 0.75*MainActivity.getYmin()+0.25*MainActivity.getYmax();
-        ymax = 0.25*MainActivity.getYmin()+0.75*MainActivity.getYmax();
+        xmin = 0.75*FLab.getXmin()+0.25*FLab.getXmax();
+        xmax = 0.25*FLab.getXmin()+0.75*FLab.getXmax();
+        ymin = 0.75*FLab.getYmin()+0.25*FLab.getYmax();
+        ymax = 0.25*FLab.getYmin()+0.75*FLab.getYmax();
         mXminField = mCustomKeyboard.registerEditText(R.id.xmin_str,xmin.toString());
         mXmaxField = mCustomKeyboard.registerEditText(R.id.xmax_str,xmax.toString());
         mYminField = mCustomKeyboard.registerEditText(R.id.ymin_str,ymin.toString());

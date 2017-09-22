@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private ErrorAlert err1;
     Button btnChart;
     Button btnFunc;
-    private static FunctionLab FLab;
+    private FunctionLab FLab;
     double x0[][];
     double y0[][];
     //private XYMultipleSeriesRenderer m_multiRenderer;
@@ -85,29 +85,7 @@ public class MainActivity extends AppCompatActivity {
         }
         err1 = new ErrorAlert();
         if (FLab==null) {
-            FLab = new FunctionLab();
-/*            try {
-//                FLab.AddFunction("x+a");
-//                FLab.AddFunction("(x-1)^2");
-//                FLab.AddFunction("x*a+exp(x)");
-//                FLab.AddFunction("x/4");
-
-//                FLab.AddFunction("x!");
-
-//                FLab.AddFunction("x*a+exp(x)-(x/4)");
-
-//                FLab.AddFunction("x-0");
-//                FLab.AddFunction("4");
-//                FLab.AddFunction("sin(x/2)");
-
-
-//                FLab.AddFunction("ctg(x-1)");
-//                FLab.AddFunction("x-2");
-//                FLab.AddFunction("(x-1)*(x-3)*(x-7)");
-//                FLab.AddFunction("sin(x/2)");
-            } catch (ParseException e) {
-                err1.ShowError(MainActivity.this, 1);
-            }*/
+            FLab = FunctionLab.get();
         }
         x0 = new double[NGraphMax][FLab.getnumberofdots()];
         y0 = new double[NGraphMax][FLab.getnumberofdots()];
@@ -597,24 +575,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public static void setXmin(double x){
-        FLab.setXmin(x);
-        FLab.setAllFalse();
-    }
-    public static void setXmax(double x){
-        FLab.setXmax(x);
-        FLab.setAllFalse();
-    }
-    public static void setYmin(double x){
-        FLab.setYmin(x);
-        FLab.setAllFalse();
-    }
-    public static void setYmax(double x){
-        FLab.setYmax(x);
-        FLab.setAllFalse();
-    }
 
-    public static double getXmin(){
+/*    public static double getXmin(){
         return FLab.getXmin();
     }
     public static double getXmax(){
@@ -625,8 +587,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public static double getYmax(){
         return FLab.getYmax();
-    }
-    public static FunctionLab getFLab() {return FLab;}
+    }*/
 
     private void updateGraph(XYMultipleSeriesRenderer mRenderer){
         final double minX = mRenderer.getXAxisMin();
@@ -667,7 +628,6 @@ public class MainActivity extends AppCompatActivity {
         FLab.setXmax(1.5*maxX-0.5*minX);
         FLab.setYmin(1.5*minY-0.5*maxY);
         FLab.setYmax(1.5*maxY-0.5*minY);
-        FLab.setAllFalse();
     }
 
 }

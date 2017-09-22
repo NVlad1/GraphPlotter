@@ -22,7 +22,7 @@
 
 
     <string name="params">Edit parameters</string>
-    <string name="AddRemFunction">Add/Remove Function</string>
+    <string name="add_remove_function">Add/Remove Function</string>
     <string name="title_activity_help">Help</string>
     <string name="help1">Usage</string>
     <string name="help2">The application plots any function or multiple functions on the same graph.

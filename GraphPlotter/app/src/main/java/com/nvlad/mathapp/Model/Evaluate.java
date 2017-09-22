@@ -10,23 +10,21 @@ import static com.nvlad.mathapp.Model.Symbol.FunctionType;
  */
 class Evaluate{
     private Expression expr,expr0;
-    private String s0;
+    //private final String s0;
 
-    Evaluate(){
+    Evaluate(String s0, int mode) throws ParseException{
         expr0 = new Expression();
         expr = new Expression();
-        s0 = "";
-    }
-
-    public void setString(String s){
-        s0 = s;
-    }
-
-    void setExpressionEval(int mode) throws ParseException {
-        expr0.Nullify();
+        //this.s0 = s0;
         Parser p = new Parser(expr0, mode);
         p.EvalParser(s0);
     }
+
+    /*void setExpressionEval(int mode) throws ParseException {
+        //expr0.Nullify();
+        Parser p = new Parser(expr0, mode);
+        p.EvalParser(s0);
+    }*/
 
     private double EvaluateFunction (FunctionType Type, Expression expr) throws ParseException, UnknownException {
         double a = EvaluatorBracket(expr);
@@ -51,7 +49,7 @@ class Evaluate{
         double a;
         expr.setEqualTo(expr0);
         expr.EvaluateVariables(x);
-        expr.OperatorCheck();
+        expr.MissedMultiplicationCheck();
         Expression expr1 = new Expression();
         while(true){
             Expression.BracketInfo br_info = expr.getHighestBracketPos();

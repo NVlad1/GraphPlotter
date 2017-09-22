@@ -12,7 +12,7 @@
     <string name="roots">корни</string>
     <string name="intersect">пересечения</string>
     <string name="params">Параметры</string>
-    <string name="AddRemFunction">Добавить/удалить функции</string>
+    <string name="add_remove_function">Добавить/удалить функции</string>
     <string name="title_activity_help">Помощь</string>
     <string name="help1">Использование</string>
     <string name="help2">Приложение строит график любой функции или нескольких функций.

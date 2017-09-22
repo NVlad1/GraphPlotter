@@ -13,7 +13,7 @@ import static com.nvlad.mathapp.Model.Symbol.FunctionType;
 import static com.nvlad.mathapp.Model.Symbol.VarType;
 
 class Expression{
-    private static int Nmax = 50;
+    private static int Nmax = 200;
 
     private Symbol Sym[];
     private Gamma g;
@@ -109,7 +109,7 @@ class Expression{
     }
 
     private boolean UnaryPostOperator(int pos){
-        return ((pos==0)||(!Sym[pos+1].isNumber()));
+        return (!Sym[pos+1].isNumber());
     }
 
     private void Shift (int pos, int step){
@@ -199,12 +199,14 @@ class Expression{
         }
     }
 
-    void OperatorCheck(){
+    void MissedMultiplicationCheck(){
         for (int i = 0; i < Nmax-1; i++){
             if (((Sym[i].isDigit())&(Sym[i+1].isVar()))||
                     ((Sym[i].isDigit())&(Sym[i+1].isLeftBracket()))||
                     ((Sym[i].isVar())&(Sym[i+1].isLeftBracket()))||
-                    ((Sym[i].isVar())&(Sym[i+1].isVar()))){InsertMult(i+1);}
+                    ((Sym[i].isVar())&(Sym[i+1].isVar()))||
+                    ((Sym[i].isVar())&(Sym[i+1].isFunction()))||
+                    ((Sym[i].isDigit())&(Sym[i+1].isFunction()))){InsertMult(i+1);}
         }
     }
 
